@@ -10,8 +10,8 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
-    public DbSet<ContactModel> Contacts { get; set; }
-    public DbSet<ContentModel> Contents { get; set; }
-    public DbSet<DownloadModel> Downloads { get; set; }
+    public DbSet<ContactModel> Contact { get; set; }
+    public DbSet<ContentModel> Content { get; set; }
+    public DbSet<DownloadModel> Download { get; set; }
 }
 

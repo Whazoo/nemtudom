@@ -9,20 +9,20 @@
 
 <html>
 <head>
-	<title>Contact</title>
+    <title>Contact</title>
 </head>
 <body>
+<h1 style="color: blue; text-align: center;">Contact List</h1>
 
-
-<ul style="margin-top: 300px; background-color: #0a53be">
-        @foreach (var contact in Model)
-        {
-            <li>
-                <p>Telefonszam: @contact.phonenumber</p>
-                <p>Email: @contact.email</p>
-                <p>Social Media: @contact.socialmedia</p>
-            </li>
-        }
-    </ul>
+<ul style="list-style-type: none; margin-top: 250px">
+    @foreach (var contact in Model)
+    {
+        <li style="margin-bottom: 20px; border: 1px solid black; padding: 10px; background-color: #b6effb">
+            <p><strong>Telefonszam:</strong> @contact.phonenumber</p>
+            <p><strong>Email:</strong> @contact.email</p>
+            <p><strong>Social Media:</strong> @contact.socialmedia</p>
+        </li>
+    }
+</ul>
 </body>
 </html>

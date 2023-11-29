@@ -8,7 +8,7 @@ namespace nemtudom.Controllers;
 
 public class ContactController : Controller
 {
-    private readonly ILogger<ContactController> _logger;
+    //private readonly ILogger<ContactController> _logger;
     private readonly ApplicationDbContext _context;
 
 
@@ -19,8 +19,8 @@ public class ContactController : Controller
 
     public ActionResult Index()
     {
-        var contacts = _context.Contacts.ToList();
-        return View(contacts);
+        var contactList = _context.Contact.ToList();
+        return View(contactList);
     }
     
 }

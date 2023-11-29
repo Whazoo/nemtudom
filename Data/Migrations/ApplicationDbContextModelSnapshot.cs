@@ -232,7 +232,7 @@ namespace nemtudom.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("nemtudom.Models.ContentModel", b =>
