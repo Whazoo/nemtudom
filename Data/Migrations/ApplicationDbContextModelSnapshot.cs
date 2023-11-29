@@ -15,7 +15,7 @@ namespace nemtudom.Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.14");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -211,6 +211,84 @@ namespace nemtudom.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("nemtudom.Models.ContactModel", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("phonenumber")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("socialmedia")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("nemtudom.Models.ContentModel", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("body")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("img")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("link")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("video")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Contents");
+                });
+
+            modelBuilder.Entity("nemtudom.Models.DownloadModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("file_name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("file_path")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("is_active")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("uploaded_At")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Downloads");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

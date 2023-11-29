@@ -1,9 +1,8 @@
-@model ContactModel
+@model List<nemtudom.Models.ContactModel>
+
 
 @{
     Layout = Layout;
-    var showCarousel = false;
-
 }
 
 <!DOCTYPE html>
@@ -14,9 +13,16 @@
 </head>
 <body>
 
-<div>
 
-</div>
-
+<ul style="margin-top: 300px; background-color: #0a53be">
+        @foreach (var contact in Model)
+        {
+            <li>
+                <p>Telefonszam: @contact.phonenumber</p>
+                <p>Email: @contact.email</p>
+                <p>Social Media: @contact.socialmedia</p>
+            </li>
+        }
+    </ul>
 </body>
 </html>
