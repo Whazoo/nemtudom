@@ -1,7 +1,7 @@
 @model IEnumerable<DownloadModel>
 
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
 <!DOCTYPE html>
@@ -11,11 +11,13 @@
     <title>Download</title>
 </head>
 <body>
-<div>
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 120px">
     @foreach (var download in Model)
     {
-        <p>@download.file_name</p>
-        <a href="@download.file_path">Download</a>
+        <div style="margin-bottom: 20px; border: 1px solid black; padding: 10px; width: 50%;">
+            <p><strong>Fájlnév:</strong> @download.file_name</p>
+            <a href="@Url.Action("DownloadFile", "Download", new { id = download.download_id })" style="background-color: #4CAF50; color: white; padding: 14px 20px; text-align: center; text-decoration: none; display: inline-block;">Letöltés</a>
+        </div>
     }
 </div>
 
