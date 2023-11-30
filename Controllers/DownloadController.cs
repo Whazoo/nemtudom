@@ -1,20 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
+using nemtudom.Data;
 using nemtudom.Models;
 
 namespace nemtudom.Controllers;
 
+[Authorize]
 public class DownloadController : Controller
 {
-    private readonly ILogger<DownloadController> _logger;
+    private readonly ApplicationDbContext _context;
 
-    public DownloadController(ILogger<DownloadController> logger)
+    public DownloadController(ApplicationDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var download = _context.Download.ToList();
+        return View(download);
     }
+    
 }

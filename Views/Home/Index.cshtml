@@ -7,69 +7,96 @@
 
 <html>
 <head>
-  <title>Contact</title>
-  
-  <link rel="stylesheet" href="~/Views/Home/home.css" asp-append-version="true" />
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Views/Home/home.css" asp-append-version="true" />
+    <title>Gaming Közösség</title>
+    <style>
+    section {
+                max-width: 800px;
+                margin: 100px auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    </style>
 </head>
 <body>
 <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">nemtudom</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Index">Tartalom</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Kapcsolat</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Download" asp-action="Index">Letöltés</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">nemtudom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Index">Tartalom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Kapcsolat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Download" asp-action="Index">Letöltés</a>
+                    </li>
+                </ul>
+                <partial name="_LoginPartial" />
             </div>
-        </nav>
+        </div>
+    </nav>
 </header>
+
+<section>
+    <h1>Gaming Közösség</h1>
+    <p>Üdvözöllek a virtuális otthonunkban!</p>
+    <h2>Miért minket válassz?</h2>
+    <p>A Gaming Közösség nem pusztán egy hely, ahol játszani lehet; ez egy hely, ahol a szenvedély összeköti az
+        embereket. Egy olyan hely, ahol mindenki megtalálhatja a hasonló gondolkodású társakat, és együtt élheti
+        át az online játékok varázslatos világát. Legyen szó casual mókáról vagy kompetitív versenyekről, nálunk
+        mindenkinek van helye és szerepe.</p>
+
+    <h2>Mit kínálunk?</h2>
+    <p>A Gaming Közösség folyamatosan szervez különféle versenyeket, eseményeket és online összejöveteleket,
+        hogy a tagjaink mindig találjanak új kihívásokat és élményeket. Legyen szó e-sport versenyekről, közös
+        játékalkalmakról vagy exkluzív rendezvényekről, célunk, hogy minden tagunk megtalálja azt a közegét,
+        ahol igazán kibontakozhat.</p>
+
+    <p>Csatlakozz hozzánk, és légy részese egy olyan közösségnek, ahol a játék nem csupán egy tevékenység, hanem
+        egy életstílus. Gyere, és tapasztald meg velünk a virtuális barátság erejét!</p>
+
+    <p>Üdvözlettel, <br>A Gaming Közösség Csapata</p>
+</section>
 <div style="z-index: 0; width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 100px;">
-
-  <div style="margin: 30px auto; width: 300px; height: 300px; border-radius: 40px; box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;">
-    <div style="width: inherit; height: inherit; border-radius: 40px;">
-      <img src="https://i.redd.it/b3esnz5ra34y.jpg" style="width: inherit; height: inherit; border-radius: 40px; object-fit: cover;">
+    <div style="margin: 30px auto; width: 300px; height: 300px; border-radius: 40px; box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;">
+        <div style="width: inherit; height: inherit; border-radius: 40px;">
+            <img src="https://www.gamingzombies.com/blog/wp-content/uploads/2022/01/gaming-channel-description-copy-and-paste-scaled.jpg" style="width: inherit; height: inherit; border-radius: 40px; object-fit: cover;">
+        </div>
+        <div style="text-align: center; border-radius: 0px 0px 40px 40px; font-family: sans-serif; font-weight: bold; font-size: 30px; margin-top: -80px; height: 40px; color: white;">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Kapcsolat</a>
+        </div>
     </div>
-    <div style="text-align: center; border-radius: 0px 0px 40px 40px; font-family: sans-serif; font-weight: bold; font-size: 30px; margin-top: -80px; height: 40px; color: white;">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Kapcsolat</a>
+    <div style="margin: 30px auto; width: 300px; height: 300px; border-radius: 40px; box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;">
+        <div style="width: inherit; height: inherit; border-radius: 40px;">
+            <img src="https://assets.aboutamazon.com/dims4/default/ffd43f6/2147483647/strip/true/crop/1999x1125+1+0/resize/1320x743!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2Fa9%2F30%2F6c750c0442ea9b60c41a7a77f949%2Fprimegaming-pr-hero-2000x1125.jpg" style="width: inherit; height: inherit; border-radius: 40px; object-fit: cover;">
+        </div>
+        <div style="text-align: center; border-radius: 0px 0px 40px 40px; font-family: sans-serif; font-weight: bold; font-size: 30px; margin-top: -80px; height: 40px;">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Download" asp-action="Index">Letöltés</a>
+        </div>
     </div>
-  </div>
-    
-  <div style="margin: 30px auto; width: 300px; height: 300px; border-radius: 40px; box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;">
-    <div style="width: inherit; height: inherit; border-radius: 40px;">
-      <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" style="width: inherit; height: inherit; border-radius: 40px; object-fit: cover;">
+    <div style="margin: 30px auto; width: 300px; height: 300px; border-radius: 40px; box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;">
+        <div style="width: inherit; height: inherit; border-radius: 40px;">
+            <img src="https://storage.googleapis.com/twg-content/images/statistics-youtube-gaming-content.width-800.png" style="width: inherit; height: inherit; border-radius: 40px; object-fit: cover;">
+        </div>
+        <div style="text-align: center; border-radius: 0px 0px 40px 40px; font-family: sans-serif; font-weight: bold; font-size: 30px; margin-top: -80px; height: 40px; color: black;">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Index">Tartalom</a>
+        </div>
     </div>
-    <div style="text-align: center; border-radius: 0px 0px 40px 40px; font-family: sans-serif; font-weight: bold; font-size: 30px; margin-top: -80px; height: 40px;">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Index">Letöltés</a>
-    </div>
-  </div>
-
-  <div style="margin: 30px auto; width: 300px; height: 300px; border-radius: 40px; box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;">
-    <div style="width: inherit; height: inherit; border-radius: 40px;">
-      <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" style="width: inherit; height: inherit; border-radius: 40px; object-fit: cover;">
-    </div>
-    <div style="text-align: center; border-radius: 0px 0px 40px 40px; font-family: sans-serif; font-weight: bold; font-size: 30px; margin-top: -80px; height: 40px; color: black;">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Index">Tartalom</a>
-    </div>
-  </div>
-
 </div>
-
 
 </body>
 </html>

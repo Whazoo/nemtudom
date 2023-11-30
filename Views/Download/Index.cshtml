@@ -1,4 +1,4 @@
-@model DownloadModel
+@model IEnumerable<DownloadModel>
 
 @{
     Layout = null;
@@ -12,7 +12,12 @@
 </head>
 <body>
 <div>
-      
+    @foreach (var download in Model)
+    {
+        <p>@download.file_name</p>
+        <a href="@download.file_path">Download</a>
+    }
 </div>
+
 </body>
 </html>

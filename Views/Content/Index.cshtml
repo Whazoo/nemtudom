@@ -1,4 +1,4 @@
-@model ContentModel
+@model List<nemtudom.Models.ContentModel>
 
 @{
     Layout = Layout;
@@ -12,8 +12,21 @@
     <title>Tartalom</title>
 </head>
 <body>
-
-
+<h1 style="color: blue; text-align: center;">Contact List</h1>
+<div style="display: flex; justify-content: space-between;">
+<ul style="list-style-type: none; margin-top: 250px">
+    @foreach (var content in Model)
+    {
+        <li style="margin-bottom: 20px; border: 1px solid black; padding: 10px; background-color: #b6effb">
+            <p><strong>Cím:</strong> @content.content_title</p>
+            <p><strong>Tartalom:</strong> @content.content_body</p>
+            <img src="@content.content_img" alt="Content Image" style="width: 45%; height: auto;" />
+            <iframe src="@content.content_video" frameborder="0" allowfullscreen ></iframe>
+            <p><strong>Link:</strong> @content.content_link</p>
+        </li>
+    }
+</ul>
+</div>
 
 </body>
 </html>

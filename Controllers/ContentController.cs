@@ -1,20 +1,24 @@
 
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using nemtudom.Data;
 using nemtudom.Models;
 namespace nemtudom.Controllers;
 
 public class ContentController : Controller
 {
     private readonly ILogger<ContentController> _logger;
+    private readonly ApplicationDbContext _context;
 
-    public ContentController(ILogger<ContentController> logger)
+
+    public ContentController(ApplicationDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     public ActionResult Index()
     {
-        return View();
+        var contentList = _context.Content.ToList();
+        return View(contentList);
     }
 }
