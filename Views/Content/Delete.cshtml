@@ -1,0 +1,52 @@
+@model nemtudom.Models.ContentModel
+@{
+    Layout = Layout;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tartalom</title>
+    <style>
+        body {
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+<h2>Delete Content</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Content</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.content_title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.content_body)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.content_img)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.content_link)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.content_video)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="content_id" />
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-default">Back to List</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
