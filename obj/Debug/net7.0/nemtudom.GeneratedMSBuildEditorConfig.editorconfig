@@ -136,8 +136,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29udGVudC9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/adam/Desktop/csharptesztttt/nemtudom/Views/Content/DeleteIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29udGVudC9EZWxldGVJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/adam/Desktop/csharptesztttt/nemtudom/Views/Content/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29udGVudC9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adam/Desktop/csharptesztttt/nemtudom/Views/Content/EditIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29udGVudC9FZGl0SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/adam/Desktop/csharptesztttt/nemtudom/Views/Content/Index.cshtml]

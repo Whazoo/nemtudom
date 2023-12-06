@@ -32,10 +32,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="AddContent">Hozzáadás</a>
                         </li>
-                        <li class="nav-item">
+                        @{
+                            var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+                            var isEditOrDelete = currentAction == "Edit" || currentAction == "Delete";
+                        }
+                        <li class="nav-item @(isEditOrDelete ? "active" : "")">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Edit">Szerkesztés</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item @(isEditOrDelete ? "active" : "")">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Delete">Törlés</a>
                         </li>
                     </ul>
@@ -43,7 +47,7 @@
                 </div>
             </div>
         </nav>
-</header>
+    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -61,4 +65,5 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
 
