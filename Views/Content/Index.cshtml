@@ -22,11 +22,15 @@
             <p><strong>Tartalom:</strong> @content.content_body</p>
             <img src="@content.content_img" alt="Content Image" style="width: 45%; height: auto;" />
             <iframe src="@content.content_video" frameborder="0" allowfullscreen ></iframe>
-            <p><strong>Link:</strong> @content.content_link</p>
-        </li>
+            <p>
+                <strong>Link:</strong>
+                <a href="@(Uri.IsWellFormedUriString(content.content_link, UriKind.Absolute) ? content.content_link : $"http://{content.content_link}")" target="_blank">
+                    @content.content_link
+                </a>
+            </p>
+            </li>
     }
 </ul>
 </div>
-
 </body>
 </html>
