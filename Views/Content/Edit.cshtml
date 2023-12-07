@@ -17,32 +17,33 @@
     <h2>Edit Content</h2>
     
     <form asp-action="Edit" asp-controller="Content" method="post">
+        <input type="hidden" asp-for="content_id" />
         <div class="form-group">
             <label asp-for="content_title"></label>
-            <input asp-for="content_title" class="form-control" />
+            <input asp-for="content_title" class="form-control"/>
             <span asp-validation-for="content_title" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="content_body"></label>
-            <input asp-for="content_body" class="form-control" />
+            <input asp-for="content_body" class="form-control"/>
             <span asp-validation-for="content_body" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="content_img"></label>
-            <input asp-for="content_img" class="form-control" />
+            <input asp-for="content_img" class="form-control"/>
             <span asp-validation-for="content_img" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="content_video"></label>
-            <input asp-for="content_video" class="form-control" />
+            <input asp-for="content_video" class="form-control"/>
             <span asp-validation-for="content_video" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="content_link"></label>
-            <input asp-for="content_link" class="form-control" />
+            <input asp-for="content_link" class="form-control"/>
             <span asp-validation-for="content_link" class="text-danger"></span>
         </div>
-        
+
         <button type="submit" class="btn btn-primary">Mentés</button>
     </form>
 </div>

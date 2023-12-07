@@ -20,7 +20,7 @@
             <p><strong>Cím:</strong> @content.content_title</p>
             <p><strong>Tartalom:</strong> @content.content_body</p>
             <iframe src="@content.content_video" allowfullscreen ></iframe>
-            <img src="@content.content_img" alt="Content Image" style="width: 45%; height: auto;" />
+            <img src="@content.content_img" alt="Content Image" style="width: 45%; height: auto; padding-left: 150px;" />
             <p>
                 <strong>Link:</strong>
                 <a href="@(Uri.IsWellFormedUriString(content.content_link, UriKind.Absolute) ? content.content_link : $"https://{content.content_link}")" target="_blank">

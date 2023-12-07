@@ -62,11 +62,11 @@ namespace nemtudom.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, ContentModel content)
+        public IActionResult Edit(int content_id, ContentModel content)
         {
             try
             {
-                if (id != content.content_id)
+                if (content_id != content.content_id)
                 {
                     return NotFound();
                 }
