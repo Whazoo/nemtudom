@@ -42,7 +42,6 @@ namespace nemtudom.Controllers
             }
             catch (DbUpdateException ex)
             {
-                // Log the exception or handle it as needed
                 _logger.LogError($"Error creating content: {ex.Message}");
                 ModelState.AddModelError(string.Empty, "An error occurred while saving the content.");
             }
