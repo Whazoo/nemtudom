@@ -28,4 +28,10 @@
     <Folder Include="wwwroot\downloads\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Delete\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Delete\DeleteIndex.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\AddContent\AddContent.cshtml" />
+  </ItemGroup>
+
 </Project>

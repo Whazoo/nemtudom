@@ -1,5 +1,5 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using nemtudom.Data;
 using nemtudom.Models;
 
@@ -10,81 +10,120 @@ namespace nemtudom.Controllers
         private readonly ILogger<ContentController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public ContentController(ApplicationDbContext context)
-        {
+        public ContentController(ILogger<ContentController> logger,ApplicationDbContext context)
+        {    
+            _logger = logger;
             _context = context;
         }
 
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var contentList = _context.Content.ToList();
             return View(contentList);
         }
 
-        [HttpGet]
-        
-
-        [HttpPost]
-        public IActionResult AddContent(ContentModel model)
+        public IActionResult Create()
         {
-            if (ModelState.IsValid)
-            {
-                _context.Content.Add(model);
-                _context.SaveChanges();
-
-                // Redirect to the content index or another page
-                return RedirectToAction("Index", "Content");
-            }
-
-            return View(model);
+            return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ContentModel content)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Content.Add(content);
+                    _context.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (DbUpdateException ex)
+            {
+                // Log the exception or handle it as needed
+                _logger.LogError($"Error creating content: {ex.Message}");
+                ModelState.AddModelError(string.Empty, "An error occurred while saving the content.");
+            }
 
-        [HttpGet]
+            return View(content);
+        }
+
         public IActionResult Edit(int id)
         {
-            var contentItem = _context.Content.Find(id);
-
-            if (contentItem == null)
+            var content = _context.Content.Find(id);
+            if (content == null)
             {
                 return NotFound();
             }
 
-            return View(contentItem);
+            return View(content);
         }
 
         [HttpPost]
-        public IActionResult Edit(ContentModel model)
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, ContentModel content)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Content.Update(model);
-                _context.SaveChanges();
+                if (id != content.content_id)
+                {
+                    return NotFound();
+                }
 
-                return RedirectToAction("Index", "Content");
+                if (ModelState.IsValid)
+                {
+                    _context.Entry(content).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return RedirectToAction("Index", "Content");
+                }
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError($"Error updating content: {ex.Message}");
+                ModelState.AddModelError(string.Empty, "An error occurred while updating the content.");
             }
 
-            return View(model);
+            return View(content);
         }
 
-        // Example: Action to delete a specific content item
         public IActionResult Delete(int id)
         {
-            var contentItem = _context.Content.Find(id);
-
-            if (contentItem == null)
+            var content = _context.Content.Find(id);
+            if (content == null)
             {
                 return NotFound();
             }
 
-            return View(contentItem);
+            return View(content);
         }
-        [HttpGet]
-        public ActionResult EditIndex()
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
         {
-            var contentList = _context.Content.ToList();
-            return View(contentList);
+            try
+            {
+                var content = _context.Content.Find(id);
+                if (content == null)
+                {
+                    return NotFound();
+                }
+
+                _context.Content.Remove(content);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError($"Error deleting content: {ex.Message}");
+                return RedirectToAction(nameof(Index), new { id, saveChangesError = true });
+            }
         }
-        
     }
 }
+
+
+        
+

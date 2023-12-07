@@ -1,6 +1,8 @@
 @model nemtudom.Models.ContentModel
+
 @{
-    Layout = Layout;
+    ViewBag.Title = "Create";
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -8,44 +10,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tartalom</title>
-    <style>
-        body {
-            margin-top: 200px;
-        }
-    </style>
+    <title>Tartalom Hozzáadása</title>
 </head>
 <body>
-<h2>Delete Content</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Content</h4>
-    <hr />
+    <h2>Tartalom Törlése</h2>
+    
+    <p>Biztosan törölni akarja ezt a tartalmat?</p>
+    
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.content_title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.content_body)
-        </dd>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.content_img)
-        </dd>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.content_link)
-        </dd>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.content_video)
-        </dd>
+        <dt class="col-sm-2">Cím:</dt>
+        <dd class="col-sm-10">@Model.content_title</dd>
+        <dt class="col-sm-2">Leírás:</dt>
+        <dd class="col-sm-10">@Model.content_body</dd>
+        <dt class="col-sm-2">Kép:</dt>
+        <dd class="col-sm-10">@Model.content_img</dd>
+        <dt class="col-sm-2">Videó:</dt>
+        <dd class="col-sm-10">@Model.content_video</dd>
+        <dt class="col-sm-2">Link:</dt>
+        <dd class="col-sm-10">@Model.content_link</dd>
+        
     </dl>
-
-    <form asp-action="Delete" method="post">
-        <input type="hidden" asp-for="content_id" />
-        <div class="form-group">
-            <input type="submit" value="Delete" class="btn btn-danger" />
-            <a asp-action="Index" class="btn btn-default">Back to List</a>
-        </div>
+    
+    <form asp-action="Delete" asp-controller="Content" method="post">
+        <button type="submit" class="btn btn-danger">Törlés</button>
+        <a asp-action="Index" class="btn btn-secondary">Mégsem</a>
     </form>
 </div>
 </body>

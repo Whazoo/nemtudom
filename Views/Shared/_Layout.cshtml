@@ -30,17 +30,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Download" asp-action="Index">Letöltés</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="AddContent">Hozzáadás</a>
-                        </li>
-                        @{
-                            var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
-                            var isEditOrDelete = currentAction == "Edit" || currentAction == "Delete";
-                        }
-                        <li class="nav-item @(isEditOrDelete ? "active" : "")">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Edit">Szerkesztés</a>
-                        </li>
-                        <li class="nav-item @(isEditOrDelete ? "active" : "")">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Delete">Törlés</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Content" asp-action="Create">Tartalom hozzáadása</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

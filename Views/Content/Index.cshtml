@@ -12,7 +12,6 @@
     <title>Tartalom</title>
 </head>
 <body>
-<h1 style="color: blue; text-align: center;">Contact List</h1>
 <div style="display: flex; justify-content: space-between;">
 <ul style="list-style-type: none; margin-top: 250px">
     @foreach (var content in Model)
@@ -20,13 +19,17 @@
         <li style="margin-bottom: 20px; border: 1px solid black; padding: 10px; background-color: #b6effb">
             <p><strong>Cím:</strong> @content.content_title</p>
             <p><strong>Tartalom:</strong> @content.content_body</p>
+            <iframe src="@content.content_video" allowfullscreen ></iframe>
             <img src="@content.content_img" alt="Content Image" style="width: 45%; height: auto;" />
-            <iframe src="@content.content_video" frameborder="0" allowfullscreen ></iframe>
             <p>
                 <strong>Link:</strong>
-                <a href="@(Uri.IsWellFormedUriString(content.content_link, UriKind.Absolute) ? content.content_link : $"http://{content.content_link}")" target="_blank">
+                <a href="@(Uri.IsWellFormedUriString(content.content_link, UriKind.Absolute) ? content.content_link : $"https://{content.content_link}")" target="_blank">
                     @content.content_link
                 </a>
+            </p>
+            <p>
+                <a class="btn btn-primary" asp-area="" asp-controller="Content" asp-action="Edit" asp-route-id="@content.content_id">Szerkesztés</a>
+                <a class="btn btn-danger" asp-area="" asp-controller="Content" asp-action="Delete" asp-route-id="@content.content_id">Törlés</a>
             </p>
             </li>
     }

@@ -14,9 +14,9 @@
 </head>
 <body>
 <div>
-    <h2>Edit Content</h2>
+    <h2>Create Content</h2>
     
-    <form asp-action="Edit" asp-controller="Content" method="post">
+    <form asp-action="Create" asp-controller="Content" method="post">
         <div class="form-group">
             <label asp-for="content_title"></label>
             <input asp-for="content_title" class="form-control" />
@@ -42,8 +42,8 @@
             <input asp-for="content_link" class="form-control" />
             <span asp-validation-for="content_link" class="text-danger"></span>
         </div>
-        
-        <button type="submit" class="btn btn-primary">Mentés</button>
+    
+        <button type="submit" class="btn btn-primary">Tartalom Létrehozása</button>
     </form>
 </div>
 </body>
