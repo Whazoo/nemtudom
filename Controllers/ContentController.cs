@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using nemtudom.Data;
@@ -22,11 +23,14 @@ namespace nemtudom.Controllers
             return View(contentList);
         }
 
+        
         public IActionResult Create()
         {
             return View();
         }
-
+        
+        
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(ContentModel content)
@@ -48,7 +52,8 @@ namespace nemtudom.Controllers
 
             return View(content);
         }
-
+        
+        
         public IActionResult Edit(int id)
         {
             var content = _context.Content.Find(id);
@@ -59,7 +64,9 @@ namespace nemtudom.Controllers
 
             return View(content);
         }
-
+        
+        
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int content_id, ContentModel content)
@@ -87,6 +94,7 @@ namespace nemtudom.Controllers
             return View(content);
         }
 
+        
         public IActionResult Delete(int id)
         {
             var content = _context.Content.Find(id);
@@ -97,7 +105,8 @@ namespace nemtudom.Controllers
 
             return View(content);
         }
-
+        
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)

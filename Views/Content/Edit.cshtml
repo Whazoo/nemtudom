@@ -10,13 +10,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tartalom Hozzáadása</title>
+    <title>Tartalom Szerkesztése</title>
 </head>
 <body>
 <div>
-    <h2>Edit Content</h2>
+    <h2>Tartalom szerkesztése:</h2>
     
-    <form asp-action="Edit" asp-controller="Content" method="post">
+    <form asp-action="Edit" asp-controller="Content" method="post" style="margin-top: 150px;">
         <input type="hidden" asp-for="content_id" />
         <div class="form-group">
             <label asp-for="content_title"></label>
